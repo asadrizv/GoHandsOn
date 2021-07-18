@@ -82,7 +82,7 @@ func main() {
 	result := <-done
 
 	if result {
-		println("True pass hua ji!")
+		println("True")
 	}
 
 	fmt.Println("Second go routine is also done")
