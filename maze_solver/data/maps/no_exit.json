@@ -1,0 +1,12 @@
+{
+    "forward": "tiger",
+    "left": {
+        "forward": {
+            "upstairs": "dragon"
+        },
+        "left": "tiger"
+    },
+    "right": {
+        "forward": "dead end"
+    }
+}

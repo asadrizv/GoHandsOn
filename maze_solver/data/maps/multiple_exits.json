@@ -1,0 +1,45 @@
+{
+    "forward": "tiger",
+    "left": {
+        "forward": {
+            "upstairs": {
+                "forward": {
+                "upstairs": "exit"
+            }
+        }
+    },
+
+        "left": {
+            "forward": {
+                "upstairs":"exit"
+            }
+        }
+    },
+
+    "right": {
+        "forward": {
+            "left": "exit"
+        }
+    },
+
+    "upstairs": {
+        "forward": {
+            "upstairs": {
+                "forward": {
+                "upstairs": "exit"
+            }
+        }
+    }
+    },
+
+    "downstairs": {
+        "forward": {
+            "upstairs": {
+                "forward": {
+                "upstairs": "exit"
+            }
+        }
+    }
+    }
+
+}

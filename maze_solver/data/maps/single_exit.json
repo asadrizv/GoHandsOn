@@ -1,0 +1,20 @@
+{
+    "forward": "tiger",
+    "left": {
+        "forward": {
+            "upstairs": {
+                "right": {
+                "downstairs": "exit"
+            }
+        }
+    },
+
+        "left": {
+            "forward": "tiger"
+        }
+    },
+
+    "right": {
+        "forward": "tiger"
+    }
+}
