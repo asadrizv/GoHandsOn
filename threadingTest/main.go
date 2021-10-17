@@ -22,7 +22,7 @@ func main() {
 	inputData, err := ioutil.ReadFile("data.txt")
 
 	if err != nil {
-		fmt.Println("agaya ji error", nil)
+		fmt.Println("error while opening file: ", nil)
 	}
 
 	sliceData := strings.Split(string(inputData), ",")
@@ -33,7 +33,7 @@ func main() {
 		intVal, err := strconv.Atoi(v)
 
 		if err != nil {
-			fmt.Println("agaya ji error", nil)
+			fmt.Println("error while parsing data: ", nil)
 		}
 		intInput = append(intInput, intVal)
 	}
