@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"strconv"
 	"strings"
+	"sync"
 )
 
 func getOdd(vect []int, result chan<- int) {
@@ -42,32 +43,27 @@ func main() {
 	var prevCount int = 0
 	var tot int = 0
 
-	results := []chan int{}
+	results := make(chan int, len(intInput))
+	var wg sync.WaitGroup
 
 	for count < len(intInput) {
-		result := make(chan int)
-		results = append(results, result)
-
 		subSlice := intInput[prevCount:count]
 		fmt.Println(subSlice)
-		go getOdd(subSlice, result)
+		wg.Add(1)
+		go getOdd(subSlice, results)
 
 		prevCount = count
 		count += 2
 	}
 
-	for _, result := range results {
-		out := <-result
-		tot += out
-	}
+	go func() {
+		for result := range results {
+			tot += result
+			wg.Done()
+		}
+	}()
 
-	var lastIndex int = len(intInput)
-	if len(intInput)%2 != 0 && intInput[lastIndex-1]%2 != 0 {
-		tot++
-	}
-
+	wg.Wait()
 	fmt.Println(tot)
-	var input string
-	fmt.Scanln(&input)
 
 }
